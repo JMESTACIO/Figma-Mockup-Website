@@ -7,12 +7,13 @@ Built with plain HTML, CSS and JavaScript.
 
 - [x] Project setup (folders, stylesheet, images)
 - [x] Home page
-- [ ] About page
-- [ ] Programs and Schedule & Pricing pages
+- [x] About page
+- [x] Programs and Schedule & Pricing pages
 - [ ] Contact page and enrollment form
 - [ ] Tablet and mobile layouts
 - [ ] Accessibility, proofreading and final testing
 
 ## Progress log
 
-- Day 1 (Oct 13): set up the project folders and stylesheet, built the Home page (desktop).
+- Oct 13: set up the project folders and stylesheet, built the Home page (desktop).
+- Oct 15: built the About page with the video and audio, the Programs page and the Schedule & Pricing page.
