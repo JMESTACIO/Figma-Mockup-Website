@@ -24,8 +24,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;   /* keeps linked sections below the sticky menu */
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
 
 body {
     margin: 0;
@@ -76,10 +82,40 @@ img {
     outline-offset: 3px;
 }
 
+/* hidden on screen but still read by screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* lets keyboard users jump past the menu */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    z-index: 20;
+    padding: 10px 16px;
+    background: var(--yellowColor);
+    color: var(--navyColor);
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
 .wrapper {
     max-width: 1188px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+.page {
+    min-height: 60vh;
 }
 
 .section {
@@ -103,6 +139,18 @@ img {
 .sub-title {
     margin: 44px 0 18px;
     font-size: 19px;
+}
+
+.sub-title-first {
+    margin-top: 0;
+}
+
+.eyebrow-center {
+    text-align: center;
+}
+
+.eyebrow-spaced {
+    margin-bottom: 10px;
 }
 
 .card-grid {
@@ -371,6 +419,32 @@ img {
 }
 
 
+/* Home - quick facts */
+.facts {
+    background: #fff;
+    border-bottom: 1px solid var(--lineColor);
+}
+
+.facts-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 28px 0;
+    text-align: center;
+}
+
+.fact strong {
+    display: block;
+    color: var(--blueTextColor);
+    font: 700 22px var(--headingFont);
+}
+
+.fact span {
+    color: var(--grayColor);
+    font-size: 12px;
+}
+
+
 /* About page */
 .about-layout {
     display: grid;
@@ -595,6 +669,16 @@ img {
 
 
 /* Schedule and pricing page */
+.table-title {
+    margin-top: 6px;
+    font-size: 26px;
+}
+
+.plans-eyebrow {
+    margin-top: 64px;
+    text-align: center;
+}
+
 .table-wrap {
     overflow-x: auto;
     background: #fff;
@@ -905,10 +989,51 @@ img {
 }
 
 
+/* Hover effects */
+.btn,
+.program-card,
+.plan,
+.course-grid .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.program-card:hover,
+.plan:hover,
+.course-grid .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(15, 35, 56, 0.18);
+}
+
+/* no movement for people who turned animations off */
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .program-card,
+    .plan,
+    .course-grid .card {
+        transition: none;
+    }
+
+    .btn:hover,
+    .program-card:hover,
+    .plan:hover,
+    .course-grid .card:hover {
+        transform: none;
+    }
+}
+
+
 /* Tablet (up to 1024px) */
 @media (max-width: 1024px) {
     .page-banner {
         min-height: 170px;
+    }
+
+    .facts-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .nav-list {
