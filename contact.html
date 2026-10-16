@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<!-- AquaStride Academy - Contact page -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AquaStride Academy or send an enrollment request for swimming lessons.">
+    <meta name="theme-color" content="#0f2338">
     <title>Contact | AquaStride Academy</title>
     <link rel="icon" href="images/logo.svg">
 
@@ -16,6 +19,8 @@
 </head>
 
 <body>
+
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
 
     <!-- Header and navigation -->
     <header class="site-header">
@@ -44,7 +49,7 @@
         </nav>
     </header>
 
-    <main class="page">
+    <main class="page" id="mainContent">
 
     <section class="page-banner banner-contact">
         <div class="wrapper">
@@ -84,7 +89,7 @@
                         <span class="map-label">AquaStride Academy Head Office</span>
                     </div>
 
-                    <p class="eyebrow" style="margin-bottom: 10px;">Connect with us</p>
+                    <p class="eyebrow eyebrow-spaced">Connect with us</p>
                     <ul class="social-list social-list-outline">
                         <li><a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="images/icons/facebook.svg" alt=""></a></li>
                         <li><a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="images/icons/instagram.svg" alt=""></a></li>
@@ -105,21 +110,29 @@
                     <input type="email" id="email" name="email" autocomplete="email" placeholder="josemiguelestacioz@gmail.com" required>
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="09614839866">
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" pattern="09[0-9]{9}"
+                        title="Enter an 11-digit mobile number that starts with 09, for example 09614839866"
+                        placeholder="09614839866">
 
                     <label for="ageGroup">Age Group</label>
                     <select id="ageGroup" name="ageGroup">
-                        <option>Kids (4&ndash;12)</option>
-                        <option>Teens (12&ndash;17)</option>
+                        <option>Tadpoles (ages 3&ndash;5)</option>
+                        <option>Dolphins (ages 6&ndash;9)</option>
+                        <option>Sharks (ages 10&ndash;14)</option>
                         <option selected>Adult Beginners (18+)</option>
-                        <option>Competitive</option>
+                        <option>Adult Cardio (18+)</option>
+                        <option>Competitive (12+)</option>
                     </select>
 
                     <label for="schedule">Preferred Schedule</label>
                     <select id="schedule" name="schedule">
-                        <option>Mon / Wed at 6:00 PM</option>
+                        <option>Mon / Wed at 4:00 PM</option>
+                        <option>Tue / Thu at 4:00 PM</option>
+                        <option>Mon / Wed / Fri at 5:00 PM</option>
                         <option selected>Tue / Thu at 7:00 PM</option>
+                        <option>Mon / Wed at 6:00 PM</option>
                         <option>Mon&ndash;Fri at 6:00 AM</option>
+                        <option>Tue / Thu at 6:00 PM (Masterclass)</option>
                     </select>
 
                     <label for="notes">Additional Notes</label>
